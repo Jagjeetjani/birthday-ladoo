@@ -1,0 +1,98 @@
+.lock-screen {
+  position:fixed; inset:0; z-index:99999;
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+}
+
+.lock-video {
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; z-index:0;
+}
+.lock-overlay {
+  position:absolute; inset:0; z-index:1;
+  background: linear-gradient(
+    180deg,
+    rgba(255,240,229,0.6) 0%,
+    rgba(255,218,185,0.5) 40%,
+    rgba(255,208,168,0.55) 70%,
+    rgba(255,240,229,0.7) 100%
+  );
+}
+
+/* Floating */
+.lock-floats { position:absolute; inset:0; z-index:2; pointer-events:none; }
+.lock-float { position:absolute; font-size:1.6rem; animation:float ease-in-out infinite; opacity:.3; }
+.lf-1{top:5%;left:5%;animation-duration:4s}
+.lf-2{top:12%;right:8%;animation-duration:5s;animation-delay:.5s}
+.lf-3{top:25%;left:18%;animation-duration:3.5s;animation-delay:1s;font-size:1.2rem}
+.lf-4{top:40%;right:6%;animation-duration:4.5s;animation-delay:.3s}
+.lf-5{bottom:35%;left:6%;animation-duration:5s;animation-delay:1.5s;font-size:1.3rem}
+.lf-6{bottom:22%;right:12%;animation-duration:3.8s;animation-delay:.8s}
+.lf-7{top:55%;left:25%;animation-duration:4.2s;animation-delay:2s;font-size:1.1rem}
+.lf-8{top:8%;left:45%;animation-duration:5.5s;animation-delay:1.2s}
+.lf-9{bottom:45%;right:25%;animation-duration:3.3s;animation-delay:.6s;font-size:1.4rem}
+.lf-10{bottom:12%;left:40%;animation-duration:4.8s;animation-delay:1.8s}
+.lf-11{top:48%;right:35%;animation-duration:4s;animation-delay:2.5s;font-size:1.2rem}
+.lf-12{top:70%;left:70%;animation-duration:3.6s;animation-delay:.4s}
+
+.lock-content { position:relative; z-index:3; padding:1.5rem; width:100%; max-width:560px; }
+
+/* liquid-glass handles the card glass effect */
+.lock-card {
+  padding:3rem 2.5rem; text-align:center;
+}
+
+.lock-gift { font-size:4.5rem; margin-bottom:1.5rem; display:block; }
+
+.lock-title {
+  font-size:2.8rem; color:var(--rose); margin-bottom:0;
+  line-height:1.2;
+}
+.lock-title-sub {
+  font-size:2.2rem; color:var(--text-secondary); margin-bottom:1.5rem;
+  line-height:1.2;
+}
+
+.lock-msg {
+  font-size:1.3rem; color:var(--text-muted); margin-bottom:2.5rem;
+  line-height:1.6;
+}
+
+/* Timer */
+.lock-timer {
+  display:flex; justify-content:center; gap:1.2rem;
+  margin-bottom:2rem;
+}
+.lock-unit {
+  display:flex; flex-direction:column; align-items:center;
+  background:rgba(196,81,92,0.06); border-radius:var(--r-md);
+  padding:1rem 1.2rem; min-width:72px;
+  border:1px solid rgba(196,81,92,0.1);
+}
+.lock-num {
+  font-size:2.8rem; font-weight:800; color:var(--rose);
+  line-height:1;
+}
+.lock-label {
+  font-size:.7rem; text-transform:uppercase; letter-spacing:2px;
+  color:var(--text-muted); margin-top:.4rem; font-weight:500;
+}
+
+.lock-date {
+  font-size:1.4rem; color:var(--rose); margin-bottom:1.5rem;
+}
+
+.lock-hearts {
+  display:flex; gap:.8rem; justify-content:center; font-size:1.5rem;
+}
+
+@media(max-width:480px) {
+  .lock-card { padding:2rem 1.5rem; }
+  .lock-title { font-size:2rem; }
+  .lock-title-sub { font-size:1.6rem; }
+  .lock-gift { font-size:3.5rem; }
+  .lock-num { font-size:2rem; }
+  .lock-unit { padding:.7rem .8rem; min-width:58px; }
+  .lock-timer { gap:.8rem; }
+  .lock-msg { font-size:1.1rem; }
+}

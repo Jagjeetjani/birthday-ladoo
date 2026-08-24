@@ -1,0 +1,37 @@
+.mp-wrap {
+  position:fixed; bottom:24px; right:24px; z-index:1000;
+  display:flex; flex-direction:column; align-items:center; gap:4px;
+}
+.mp-tooltip {
+  position:absolute; bottom:75px; right:0;
+  background:rgba(59,26,42,.9); color:#fff; padding:6px 14px;
+  border-radius:8px; font-size:.8rem; white-space:nowrap;
+  opacity:0; transform:translateY(5px);
+  transition:opacity .3s,transform .3s; pointer-events:none;
+}
+.mp-wrap:hover .mp-tooltip { opacity:1; transform:translateY(0); }
+
+/* Uses liquid-glass for the glass button */
+.mp-btn {
+  width:56px; height:56px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; transition:transform .3s,box-shadow .3s;
+}
+.mp-btn:hover { transform:scale(1.1); box-shadow:0 6px 25px rgba(196,81,92,.2); }
+.mp-active { box-shadow:0 0 20px rgba(196,81,92,.15); }
+
+.mp-icon { font-size:1.4rem; }
+
+.mp-eq { display:flex; align-items:flex-end; gap:3px; height:20px; }
+.mp-bar {
+  width:3px; background:var(--rose); border-radius:2px;
+  animation:eqBar .6s ease-in-out infinite;
+}
+.mp-bar:nth-child(1){animation-delay:0s;height:8px}
+.mp-bar:nth-child(2){animation-delay:.15s;height:14px}
+.mp-bar:nth-child(3){animation-delay:.3s;height:6px}
+.mp-bar:nth-child(4){animation-delay:.1s;height:12px}
+
+.mp-label { font-size:.7rem; color:var(--text-muted); font-family:var(--font-handwritten); }
+
+@media(max-width:480px) { .mp-wrap{bottom:16px;right:16px} .mp-btn{width:48px;height:48px} }

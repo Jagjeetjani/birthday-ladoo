@@ -1,0 +1,48 @@
+.cd-section {
+  position:relative; padding:2rem 0;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-section) 50%, var(--bg) 100%);
+}
+.cd-title { text-align:center; font-size:2.8rem; margin-bottom:.5rem; font-family:var(--font-heading); color:var(--rose); }
+.cd-sub { text-align:center; font-size:1.4rem; color:var(--text-secondary); margin-bottom:3rem; }
+
+.cd-grid {
+  display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem;
+  max-width:800px; margin:0 auto 3rem;
+}
+/* liquid-glass class handles the card background/blur/border */
+.cd-card {
+  padding:2rem 1rem; text-align:center;
+  transition: transform .4s, box-shadow .4s;
+}
+.cd-card:hover { transform:translateY(-8px); }
+
+.cd-num {
+  font-size:4rem; font-weight:700; display:block; line-height:1;
+  color:var(--rose);
+}
+.cd-labels { margin-top:.5rem; }
+.cd-label-en {
+  display:block; font-size:.85rem; color:var(--text-secondary);
+  text-transform:uppercase; letter-spacing:2px; font-weight:500;
+}
+.cd-label-pa { display:block; font-size:.95rem; color:var(--text-muted); font-family:var(--font-handwritten); }
+
+.cd-celebration { text-align:center; padding:3rem; }
+.cd-big-emoji { font-size:5rem; animation:heartbeat 1.5s ease-in-out infinite; margin-bottom:1rem; }
+.cd-celeb-title { font-size:2.5rem; margin-bottom:1rem; color:var(--rose); font-family:var(--font-heading); }
+.cd-celeb-text { font-size:1.8rem; color:var(--text); }
+
+/* Rakhi - also uses liquid-glass */
+.cd-rakhi {
+  display:flex; align-items:center; justify-content:center; gap:1.2rem;
+  max-width:700px; margin:0 auto; padding:1.5rem 2rem;
+}
+.cd-rakhi-emoji { font-size:2rem; animation:float 2.5s ease-in-out infinite; }
+.cd-rakhi-en { font-size:1.2rem; color:var(--rose); margin-bottom:4px; font-family:var(--font-handwritten); }
+.cd-rakhi-pa { font-size:1.1rem; color:var(--text-muted); font-family:var(--font-handwritten); }
+
+@media(max-width:768px) {
+  .cd-grid{grid-template-columns:repeat(2,1fr)} .cd-title{font-size:2rem} .cd-num{font-size:3rem}
+  .cd-rakhi{flex-direction:column;padding:1.2rem}
+}
+@media(max-width:480px) { .cd-num{font-size:2.2rem} .cd-card{padding:1.2rem .8rem} }

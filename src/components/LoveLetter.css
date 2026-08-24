@@ -1,0 +1,114 @@
+.ll-section { position:relative; padding:2rem 0; background:var(--bg); overflow:visible; }
+.ll-title {
+  text-align:center; font-size:2.8rem; margin-bottom:.3rem;
+  font-family:var(--font-heading); color:var(--gold);
+}
+.ll-sub { text-align:center; font-size:1.4rem; color:var(--text-secondary); margin-bottom:3rem; }
+
+/* Heart rain */
+.heart-rain {
+  position:fixed; top:0; left:0; right:0; bottom:0;
+  pointer-events:none; z-index:100; overflow:hidden;
+  opacity:0; transition:opacity .5s;
+}
+.heart-rain.active { opacity:1; }
+.heart-drop {
+  position:absolute; top:-5%;
+  animation: heartFall linear forwards; opacity:.6;
+}
+@keyframes heartFall {
+  0% { transform:translateY(0) rotate(0) translateX(0); opacity:.6; }
+  100% { transform:translateY(110vh) rotate(360deg) translateX(40px); opacity:0; }
+}
+
+/* Letter paper */
+.ll-paper {
+  position:relative; max-width:820px; margin:0 auto;
+  padding:3.5rem 3rem;
+  background: linear-gradient(145deg, #fdf6e3, #fef9ef 40%, #fff8f0 70%, #fdf6e3);
+  border-radius:var(--r-lg);
+  border:2px solid rgba(218,165,32,0.5);
+  box-shadow: 0 15px 50px rgba(0,0,0,.25);
+}
+
+/* Flowers */
+.ll-flower { position:absolute; font-size:1.8rem; opacity:.4; pointer-events:none; animation:float 4s ease-in-out infinite; }
+.fl-tl{top:15px;left:18px} .fl-tr{top:15px;right:18px;animation-delay:.5s}
+.fl-bl{bottom:15px;left:18px;animation-delay:1s} .fl-br{bottom:15px;right:18px;animation-delay:1.5s}
+
+/* Body */
+.ll-body { position:relative; z-index:1; }
+.ll-greeting { font-size:1.9rem; color:var(--maroon); margin-bottom:2rem; }
+.ll-para { font-size:1.25rem; line-height:1.9; color:#3a2218; margin-bottom:1.5rem; }
+
+/* Punglish (transliterated Punjabi in English) */
+.ll-punglish {
+  font-family: var(--font-handwritten);
+  font-style:italic; font-weight:600;
+  color:#8b2252;
+}
+
+/* Nicknames */
+.nick {
+  font-family:var(--font-handwritten); font-weight:700; font-size:1.35rem;
+  padding:2px 10px; border-radius:6px; display:inline-block;
+}
+.nick-ladoo { background:rgba(253,121,168,.15); color:#d63384; }
+.nick-khnd { background:rgba(249,202,36,.15); color:#c49000; }
+.nick-khotti { background:rgba(46,204,113,.12); color:#1a8a4a; }
+.nick-jaan { background:rgba(231,76,60,.12); color:#c0392b; }
+
+/* Fun section */
+.ll-fun {
+  margin:2rem 0; padding:1.8rem;
+  background:linear-gradient(135deg,rgba(232,67,147,.06),rgba(255,215,0,.04));
+  border-radius:var(--r-md); border-left:4px solid var(--rose);
+}
+.ll-fun-header { font-size:1.5rem; color:#c0392b; text-align:center; margin-bottom:1.2rem; }
+.ll-fun-line {
+  display:flex; align-items:center; justify-content:center; gap:1rem;
+  padding:.6rem 0; margin-bottom:.5rem;
+}
+.ll-fun-quote {
+  font-family:var(--font-handwritten); font-size:1.3rem; font-weight:700;
+  color:var(--maroon); text-align:center; font-style:italic;
+}
+.ll-fun-emoji { font-size:1.8rem; }
+
+/* Signoff */
+.ll-signoff { text-align:center; margin-top:2.5rem; padding-top:2rem; }
+.ll-signoff-main { font-size:1.7rem; color:#c0392b; margin-bottom:.5rem; }
+.ll-signoff-pa {
+  font-family:var(--font-handwritten); font-size:1.5rem;
+  color:#8b2252; font-style:italic; margin-bottom:1rem;
+}
+.ll-signoff-line { width:100px; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); margin:1rem auto; }
+.ll-signoff-from {
+  font-family:var(--font-handwritten); font-size:1.25rem;
+  color:var(--maroon); font-weight:600;
+}
+
+/* Seal */
+.ll-seal {
+  position:absolute; bottom:-20px; right:40px;
+  width:50px; height:50px; border-radius:50%;
+  background:radial-gradient(circle,#c0392b,#7b0000);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.3rem;
+  box-shadow:0 3px 12px rgba(123,0,0,.4);
+  border:2px solid #a83232;
+}
+
+@media(max-width:768px) {
+  .ll-paper { padding:2.5rem 1.8rem; margin:0 .8rem; }
+  .ll-greeting { font-size:1.5rem; }
+  .ll-para { font-size:1.1rem; }
+  .nick { font-size:1.15rem; }
+}
+@media(max-width:480px) {
+  .ll-paper { padding:2rem 1.2rem; }
+  .ll-para { font-size:1rem; }
+  .ll-fun-line { flex-direction:column; gap:.3rem; }
+  .ll-fun-quote { font-size:1.1rem; }
+  .ll-seal { width:40px; height:40px; bottom:-14px; right:20px; font-size:1rem; }
+}

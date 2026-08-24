@@ -1,0 +1,99 @@
+.hero {
+  position:relative; min-height:100vh; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; overflow:hidden;
+}
+
+/* Video background */
+.hero-video {
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; z-index:0;
+}
+.hero-overlay {
+  position:absolute; inset:0; z-index:1;
+  background: linear-gradient(
+    180deg,
+    rgba(255,240,229,0.5) 0%,
+    rgba(255,218,185,0.4) 40%,
+    rgba(255,208,168,0.5) 70%,
+    rgba(255,240,229,0.7) 100%
+  );
+}
+
+/* Stars */
+.hero-stars { position:absolute; inset:0; z-index:2; }
+.hero-star {
+  position:absolute; width:3px; height:3px; border-radius:50%;
+  background:var(--gold); animation:twinkle ease-in-out infinite;
+}
+
+/* Floating */
+.hero-floats { position:absolute; inset:0; z-index:2; pointer-events:none; }
+.hero-float { position:absolute; font-size:1.4rem; animation:float ease-in-out infinite; opacity:.35; }
+.hf-1{top:8%;left:6%;animation-duration:4.5s}
+.hf-2{top:15%;right:10%;animation-duration:5s;animation-delay:.5s;font-size:1.1rem}
+.hf-3{top:28%;left:15%;animation-duration:3.8s;animation-delay:1s}
+.hf-4{top:42%;right:5%;animation-duration:4.8s;animation-delay:.3s;font-size:1.6rem}
+.hf-5{bottom:30%;left:8%;animation-duration:5.5s;animation-delay:1.5s}
+.hf-6{bottom:20%;right:15%;animation-duration:4s;animation-delay:.8s;font-size:1.2rem}
+.hf-7{top:60%;left:22%;animation-duration:4.2s;animation-delay:2s}
+.hf-8{top:10%;left:50%;animation-duration:5.2s;animation-delay:1.2s;font-size:1.5rem}
+.hf-9{bottom:40%;right:28%;animation-duration:3.6s;animation-delay:.6s}
+.hf-10{bottom:10%;left:42%;animation-duration:4.8s;animation-delay:1.8s;font-size:1rem}
+.hf-11{top:50%;right:38%;animation-duration:4.3s;animation-delay:2.5s}
+.hf-12{top:72%;left:72%;animation-duration:3.4s;animation-delay:.4s;font-size:1.3rem}
+
+/* Phulkari corners */
+.phulkari-corner { position:absolute; width:70px; height:70px; z-index:3; opacity:.2; }
+.pc-tl{top:20px;left:20px;border-top:2px solid var(--rose);border-left:2px solid var(--rose);border-top-left-radius:8px}
+.pc-tr{top:20px;right:20px;border-top:2px solid var(--rose);border-right:2px solid var(--rose);border-top-right-radius:8px}
+.pc-bl{bottom:20px;left:20px;border-bottom:2px solid var(--rose);border-left:2px solid var(--rose);border-bottom-left-radius:8px}
+.pc-br{bottom:20px;right:20px;border-bottom:2px solid var(--rose);border-right:2px solid var(--rose);border-bottom-right-radius:8px}
+
+/* Content */
+.hero-inner { position:relative; z-index:4; text-align:center; padding:0 1.5rem; }
+
+/* Typewriter */
+.hero-punjabi {
+  font-size:3.2rem; margin-bottom:1.2rem; color:var(--rose);
+  letter-spacing:2px; min-height:4rem;
+}
+.hero-cursor {
+  display:inline-block; color:var(--rose); font-weight:100;
+  animation: cursorBlink 0.8s step-end infinite;
+  margin-left:2px;
+}
+@keyframes cursorBlink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+/* Gradient Text Name */
+.hero-name {
+  font-size:4.5rem; font-weight:800; line-height:1.1; margin-bottom:1rem;
+  letter-spacing:4px;
+  background: linear-gradient(135deg, var(--rose) 0%, var(--gold) 40%, var(--rose) 60%, var(--gold) 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradShift 4s ease-in-out infinite;
+}
+.hero-letter {
+  display:inline-block;
+}
+
+.hero-scroll { position:absolute; bottom:30px; left:50%; transform:translateX(-50%); z-index:4; }
+.hero-arrow { font-size:1.8rem; color:var(--rose); display:block; animation:float 1.8s ease-in-out infinite; opacity:.4; }
+
+/* Mobile */
+@media(max-width:768px) {
+  .hero-punjabi{font-size:2.2rem;min-height:3rem}
+  .hero-name{font-size:2.8rem;letter-spacing:2px}
+  .phulkari-corner{width:45px;height:45px}
+  .hero-float{font-size:1rem}
+}
+@media(max-width:480px) {
+  .hero-punjabi{font-size:1.6rem;min-height:2.2rem}
+  .hero-name{font-size:1.8rem;letter-spacing:1px}
+  .hero-inner{padding:0 1rem}
+  .phulkari-corner{width:30px;height:30px;opacity:.15}
+  .hero-float{font-size:.8rem;opacity:.2}
+  .hero-star{width:2px;height:2px}
+}
